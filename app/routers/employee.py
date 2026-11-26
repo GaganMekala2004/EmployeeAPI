@@ -194,7 +194,7 @@ def delete_employee(
         )
 
     logger.info(
-        f"Employee ID={employee_id} deleted successfully."
+        "Employee deleted successfully."
     )
 
     return {
