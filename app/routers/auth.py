@@ -99,7 +99,8 @@ def login(
     if not db_user:
 
         logger.warning(
-            f"Login failed. User not found: {form_data.username}"
+            "Login failed. User not found: %s",
+            form_data.username
         )
 
         raise HTTPException(
