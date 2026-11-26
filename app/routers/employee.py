@@ -89,8 +89,7 @@ def get_employees(
     )
 
     logger.info(
-        "%s employee(s) returned.",
-        len(employees)
+        f"{len(employees)} employee(s) returned."
     )
 
     return employees
