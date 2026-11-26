@@ -120,7 +120,7 @@ def get_employee(
         )
 
     logger.info(
-        "Employee retrieved successfully."
+        f"Employee ID={employee_id} retrieved successfully."
     )
 
     return employee
