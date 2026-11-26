@@ -185,7 +185,7 @@ def delete_employee(
     if employee is None:
 
         logger.warning(
-            "Delete failed. Employee not found."
+            f"Delete failed. Employee ID={employee_id} not found."
         )
 
         raise HTTPException(
