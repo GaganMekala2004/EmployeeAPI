@@ -149,7 +149,7 @@ def update_employee(
     if updated_employee is None:
 
         logger.warning(
-            f"Update failed. Employee ID={employee_id} not found."
+            "Update failed. Employee not found."
         )
 
         raise HTTPException(
