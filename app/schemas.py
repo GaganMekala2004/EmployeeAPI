@@ -43,18 +43,18 @@ class EmployeeResponse(BaseModel):
 
 class UserCreate(BaseModel):
     # Basic email validation without requiring the external email-validator package
-    email: constr(regex=r'^[^@]+@[^@]+\.[^@]+$')
+    email: constr(pattern=r'^[^@]+@[^@]+\.[^@]+$')
     password: str
 
 class UserLogin(BaseModel):
     # Basic email validation without requiring the external email-validator package
-    email: constr(regex=r'^[^@]+@[^@]+\.[^@]+$')
+    email: constr(pattern=r'^[^@]+@[^@]+\.[^@]+$')
     password: str
 
 class UserResponse(BaseModel):
     id: int
     # Keep response email validated with same basic pattern
-    email: constr(regex=r'^[^@]+@[^@]+\.[^@]+$')
+    email: constr(pattern=r'^[^@]+@[^@]+\.[^@]+$')
     role: str
     is_active: bool
 
