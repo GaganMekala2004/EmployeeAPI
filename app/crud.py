@@ -140,7 +140,7 @@ def get_user_by_email(
     email: str
 ):
     logger.info(
-        f"Searching user by email: {email}"
+        "Searching user by email"
     )
 
     return db.query(models.User).filter(
