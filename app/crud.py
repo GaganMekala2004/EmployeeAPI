@@ -163,7 +163,7 @@ def create_user(
     db.refresh(db_user)
 
     logger.info(
-        f"User created: {db_user.email}"
+        "User created"
     )
 
     return db_user
