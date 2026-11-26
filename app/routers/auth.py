@@ -39,7 +39,7 @@ def signup(
     user: schemas.UserCreate,
     db: Session = Depends(get_db)
 ):
-    logger.info(f"Signup attempt for email: {user.email}")
+    logger.info("Signup attempt for email: %s", user.email)
 
     existing_user = crud.get_user_by_email(
         db,
@@ -48,7 +48,8 @@ def signup(
 
     if existing_user:
         logger.warning(
-            f"Signup failed. Email already registered: {user.email}"
+            "Signup failed. Email already registered: %s",
+            user.email
         )
 
         raise HTTPException(
@@ -67,7 +68,8 @@ def signup(
     )
 
     logger.info(
-        f"User registered successfully: {db_user.email}"
+        "User registered successfully: %s",
+        db_user.email
     )
 
     return db_user
