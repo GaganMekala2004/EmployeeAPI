@@ -86,7 +86,7 @@ def update_employee(
 
     if not db_employee:
         logger.warning(
-            f"Employee not found for update: {employee_id}"
+            "Employee not found for update"
         )
         return None
 
@@ -101,7 +101,7 @@ def update_employee(
     db.refresh(db_employee)
 
     logger.info(
-        f"Employee updated: {employee_id}"
+        "Employee updated"
     )
 
     return db_employee
@@ -117,7 +117,7 @@ def delete_employee(
 
     if not db_employee:
         logger.warning(
-            f"Employee not found for deletion: {employee_id}"
+            "Employee not found for deletion"
         )
         return None
 
@@ -125,7 +125,7 @@ def delete_employee(
     db.commit()
 
     logger.info(
-        f"Employee deleted: {employee_id}"
+        "Employee deleted"
     )
 
     return db_employee
