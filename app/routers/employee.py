@@ -51,9 +51,7 @@ def create_employee(
     )
 
     logger.info(
-        "Employee created successfully. ID=%s, Email=%s",
-        created_employee.id,
-        str(created_employee.email).replace("\n", "\\n").replace("\r", "\\r")
+        f"Employee created successfully. ID={created_employee.id}, Email={created_employee.email}"
     )
 
     return created_employee
@@ -72,12 +70,8 @@ def get_employees(
     search: str | None = None,
 ):
     logger.info(
-        "User '%s' requested employee list (skip=%s, limit=%s, department=%s, search=%s).",
-        str(current_user.email).replace("\n", "\\n").replace("\r", "\\r"),
-        skip,
-        limit,
-        str(department).replace("\n", "\\n").replace("\r", "\\r"),
-        str(search).replace("\n", "\\n").replace("\r", "\\r")
+        f"User '{current_user.email}' requested employee list "
+        f"(skip={skip}, limit={limit}, department={department}, search={search})."
     )
 
     employees = crud.get_employees(
