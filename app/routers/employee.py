@@ -43,7 +43,9 @@ def create_employee(
     db: Annotated[Session, Depends(get_db)],
     current_user: Annotated[User, Depends(require_admin)]
 ):
-    logger.info("Admin is creating an employee.")
+    logger.info(
+        f"Admin '{current_user.email}' is creating employee '{employee.email}'."
+    )
 
     created_employee = crud.create_employee(
         db,
