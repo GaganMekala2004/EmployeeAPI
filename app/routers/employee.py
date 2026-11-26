@@ -99,7 +99,8 @@ def get_employee(
     current_user: Annotated[User, Depends(get_current_user)]
 ):
     logger.info(
-        f"User '{current_user.email}' requested employee ID={employee_id}."
+        "User requested employee ID=%s.",
+        employee_id
     )
 
     employee = crud.get_employee(
