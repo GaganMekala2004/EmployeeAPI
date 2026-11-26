@@ -158,7 +158,7 @@ def update_employee(
         )
 
     logger.info(
-        "Employee updated successfully."
+        f"Employee ID={employee_id} updated successfully."
     )
 
     return updated_employee
