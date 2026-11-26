@@ -182,8 +182,7 @@ def delete_employee(
     current_user: Annotated[User, Depends(require_admin)]
 ):
     logger.info(
-        "Admin is deleting employee ID=%s.",
-        employee_id
+        f"Admin is deleting employee ID={employee_id}."
     )
 
     employee = crud.delete_employee(
