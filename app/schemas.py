@@ -1,5 +1,5 @@
 # Topic: Pydantic Schemas
-from pydantic import BaseModel, ConfigDict, EmailStr
+from pydantic import BaseModel, ConfigDict, constr
 
 # Used when creating a new employee
 class EmployeeCreate(BaseModel):
@@ -42,16 +42,19 @@ class EmployeeResponse(BaseModel):
     )
 
 class UserCreate(BaseModel):
-    email: EmailStr
+    # Basic email validation without requiring the external email-validator package
+    email: constr(regex=r'^[^@]+@[^@]+\.[^@]+$')
     password: str
 
 class UserLogin(BaseModel):
-    email: EmailStr
+    # Basic email validation without requiring the external email-validator package
+    email: constr(regex=r'^[^@]+@[^@]+\.[^@]+$')
     password: str
 
 class UserResponse(BaseModel):
     id: int
-    email: EmailStr
+    # Keep response email validated with same basic pattern
+    email: constr(regex=r'^[^@]+@[^@]+\.[^@]+$')
     role: str
     is_active: bool
 
