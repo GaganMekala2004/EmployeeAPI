@@ -137,7 +137,7 @@ def update_employee(
     current_user: Annotated[User, Depends(require_admin)]
 ):
     logger.info(
-        f"Admin is updating employee ID={employee_id}."
+        f"Admin '{current_user.email}' is updating employee ID={employee_id}."
     )
 
     updated_employee = crud.update_employee(
