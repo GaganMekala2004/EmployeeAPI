@@ -111,7 +111,7 @@ def get_employee(
     if employee is None:
 
         logger.warning(
-            f"Employee ID={employee_id} not found."
+            "Employee not found."
         )
 
         raise HTTPException(
