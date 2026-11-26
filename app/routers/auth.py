@@ -87,7 +87,8 @@ def login(
     db: Session = Depends(get_db)
 ):
     logger.info(
-        f"Login attempt for email: {form_data.username}"
+        "Login attempt for email: %s",
+        form_data.username
     )
 
     db_user = crud.get_user_by_email(
