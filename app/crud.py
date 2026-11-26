@@ -69,7 +69,7 @@ def get_employee(
     ).first()
 
     logger.info(
-        f"Fetched employee: {employee_id}"
+        "Fetched employee."
     )
 
     return employee
